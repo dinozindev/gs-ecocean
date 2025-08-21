@@ -1,0 +1,2634 @@
+[
+    {
+        "id": "7f476a91f833ba37",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "53f249e5b394f724",
+        "type": "telegram receiver",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "bot": "c0975c32a38e23ca",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "f761ec0c8a3d372a",
+                "6980b9b6f14af501"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f761ec0c8a3d372a",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 240,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ed479037d952f45c",
+        "type": "watson-assistant-v2",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "service-endpoint": "https://api.us-south.assistant.watson.cloud.ibm.com/instances/88079f10-a026-4d98-b8c2-53592ed8a019",
+        "assistant_id": "04076029-c23b-40e8-8411-db98e84cdecc",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "x": 2010,
+        "y": 240,
+        "wires": [
+            [
+                "005325f48599c113",
+                "8d716d5cda3da0e8"
+            ]
+        ]
+    },
+    {
+        "id": "005325f48599c113",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2160,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "6980b9b6f14af501",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "switch message ou voice",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "photo",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 390,
+        "y": 320,
+        "wires": [
+            [
+                "31ec2538521f8424"
+            ],
+            [
+                "846e6f8cb2177cf9"
+            ],
+            [
+                "2839e57bdb07895d"
+            ]
+        ]
+    },
+    {
+        "id": "846e6f8cb2177cf9",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Entrada de áudio",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "tipo_entrada",
+                "pt": "msg",
+                "to": "voice",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.weblink",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 400,
+        "wires": [
+            [
+                "7005a9b8780a29cf"
+            ]
+        ]
+    },
+    {
+        "id": "7005a9b8780a29cf",
+        "type": "watson-speech-to-text",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "alternatives": 1,
+        "speakerlabels": false,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "BroadbandModel",
+        "bandhidden": "",
+        "keywords": "",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "8gWPv0WalcZmAk3l0UdRYpotD22zN_nT3oY759_w-lSb",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/e53c41be-9b8e-478d-8d2d-658eaf1381ec",
+        "x": 840,
+        "y": 380,
+        "wires": [
+            [
+                "63e3214864673f14",
+                "b18386ad88744771"
+            ]
+        ]
+    },
+    {
+        "id": "63e3214864673f14",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno de áudio em texto ao Watson",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6fafa8599f8cd736",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3460,
+        "y": 1020,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "3cf5fc3a5e582ff7",
+        "type": "telegram sender",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "bot": "c0975c32a38e23ca",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 4230,
+        "y": 420,
+        "wires": [
+            [
+                "a672b5601aaf3105"
+            ]
+        ]
+    },
+    {
+        "id": "b0649e773c1a1345",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "switch text ou option",
+        "property": "payload.output.generic[0].response_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "text",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "option",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "image",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 2740,
+        "y": 1000,
+        "wires": [
+            [
+                "41ea4dca5a13ee34"
+            ],
+            [
+                "987754e1b1b3911d"
+            ],
+            [
+                "1422672347401f63"
+            ]
+        ]
+    },
+    {
+        "id": "31ec2538521f8424",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Entrada mensagem de texto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "D:/Aulas/Chatbot/chatbot_gs/bd.json",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "tipo_entrada",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "entrada_usuario",
+                "pt": "msg",
+                "to": "payload.content",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "e3aab484388a55ac"
+            ]
+        ]
+    },
+    {
+        "id": "51280297f4fc7252",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1720,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "0185ab7203784d06",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "EntraWA",
+        "func": "msg.arquivo = msg.payload;\nmsg.payload = msg.entrada_usuario;\nmsg.additional_context = {\n    \"tipo_entrada\": msg.tipo_entrada\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1720,
+        "y": 140,
+        "wires": [
+            [
+                "ed479037d952f45c",
+                "ab84c144fbe4f662"
+            ]
+        ]
+    },
+    {
+        "id": "41ea4dca5a13ee34",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno text",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].text;\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3010,
+        "y": 960,
+        "wires": [
+            [
+                "68f3eb7229e2eeb7",
+                "5ebea7b51c0f0a5b"
+            ]
+        ]
+    },
+    {
+        "id": "68f3eb7229e2eeb7",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3200,
+        "y": 1020,
+        "wires": [
+            [
+                "6fafa8599f8cd736"
+            ]
+        ]
+    },
+    {
+        "id": "987754e1b1b3911d",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno opts",
+        "func": "var keyboard = [];\nvar options = msg.payload.output.generic[0].options;\n// opções se adequam a quantidade de opções no array options\nfor (let i = 0; i<options.length;i++) {\n    keyboard.push([options[i].label])\n}\n\nvar opts = {\n    reply_markup: JSON.stringify({\n        keyboard: keyboard,\n        'resize_keyboard' : true,\n        'one_time_keyboard' : true          \n    })\n};\n\nif (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo\n}\n\nmsg.opts_wa = opts;\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].title;\nmsg.payload = msg.arquivo;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3010,
+        "y": 1120,
+        "wires": [
+            [
+                "dba80d7d7a5c3616",
+                "16a37469f473e2af"
+            ]
+        ]
+    },
+    {
+        "id": "dba80d7d7a5c3616",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3200,
+        "y": 1180,
+        "wires": [
+            [
+                "b844772738c10162"
+            ]
+        ]
+    },
+    {
+        "id": "16a37469f473e2af",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3200,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "b844772738c10162",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao TelegramOPTS",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.options",
+                "pt": "msg",
+                "to": "opts_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3460,
+        "y": 1180,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "5ebea7b51c0f0a5b",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3200,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "ab84c144fbe4f662",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "tipo_entrada",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1920,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "b18386ad88744771",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno Em texto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "D:/Aulas/Chatbot/chatbot_gs/bd.json",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "entrada_usuario",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 380,
+        "wires": [
+            [
+                "e3aab484388a55ac"
+            ]
+        ]
+    },
+    {
+        "id": "8d716d5cda3da0e8",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "property": "payload.context.skills[\"main skill\"].user_defined.tipo_wa",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "default",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            },
+            {
+                "t": "null"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 2430,
+        "y": 380,
+        "wires": [
+            [
+                "fe6de53d9e55dedf"
+            ],
+            [
+                "b0649e773c1a1345"
+            ],
+            [
+                "fa60dda028bf7922"
+            ],
+            [
+                "ed86a3314d3efbb6"
+            ]
+        ]
+    },
+    {
+        "id": "fe6de53d9e55dedf",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "texto ou audio no padrão",
+        "property": "payload.context.skills[\"main skill\"].user_defined.tipo_entrada",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2630,
+        "y": 120,
+        "wires": [
+            [
+                "c0fc6c0867ac47f7"
+            ],
+            [
+                "ded2f02ef34350f5"
+            ]
+        ]
+    },
+    {
+        "id": "f58fa56d5598cd28",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3680,
+        "y": 80,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "c0fc6c0867ac47f7",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "switch text ou option",
+        "property": "payload.output.generic[0].response_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "text",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "option",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "image",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 2860,
+        "y": 60,
+        "wires": [
+            [
+                "94e1c28ff70b0d82"
+            ],
+            [
+                "a01fe97d72fb0f8b"
+            ],
+            [
+                "50dda8b88d247be5"
+            ]
+        ]
+    },
+    {
+        "id": "94e1c28ff70b0d82",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno text",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].text;\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3230,
+        "y": 60,
+        "wires": [
+            [
+                "648cb2a4159f9a37",
+                "980b50c4bb5c8d6a"
+            ]
+        ]
+    },
+    {
+        "id": "a01fe97d72fb0f8b",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno opts",
+        "func": "var keyboard = [];\nvar options = msg.payload.output.generic[0].options;\n// opções se adequam a quantidade de opções no array options\nfor (let i = 0; i<options.length;i++) {\n    keyboard.push([options[i].label])\n}\n\nvar opts = {\n    reply_markup: JSON.stringify({\n        keyboard: keyboard,\n        'resize_keyboard' : true,\n        'one_time_keyboard' : true          \n    })\n};\n\nif (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_conversa;\n    } else {\n        var tipo = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo\n}\n\nmsg.opts_wa = opts;\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].title;\nmsg.payload = msg.arquivo;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3230,
+        "y": 160,
+        "wires": [
+            [
+                "01506b3bd280372d",
+                "aa2d6efe7af01246"
+            ]
+        ]
+    },
+    {
+        "id": "01506b3bd280372d",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3350,
+        "y": 240,
+        "wires": [
+            [
+                "bce2433fb4b39c55"
+            ]
+        ]
+    },
+    {
+        "id": "aa2d6efe7af01246",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3400,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "bce2433fb4b39c55",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao TelegramOPTS",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.options",
+                "pt": "msg",
+                "to": "opts_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3620,
+        "y": 200,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "648cb2a4159f9a37",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "ded2f02ef34350f5",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "switch text ou option",
+        "property": "payload.output.generic[0].response_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "text",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "option",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "image",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 2860,
+        "y": 520,
+        "wires": [
+            [
+                "1d547a3c0daa17ec"
+            ],
+            [
+                "63b3cd237e6409d2"
+            ],
+            [
+                "cbe605b119180d0d"
+            ]
+        ]
+    },
+    {
+        "id": "1d547a3c0daa17ec",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno text",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].text;\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3050,
+        "y": 480,
+        "wires": [
+            [
+                "4f452251116f9525",
+                "24c28b6ff1777a6b"
+            ]
+        ]
+    },
+    {
+        "id": "4f452251116f9525",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3230,
+        "y": 460,
+        "wires": [
+            [
+                "995af23ab568c67d"
+            ]
+        ]
+    },
+    {
+        "id": "63b3cd237e6409d2",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno opts",
+        "func": "var keyboard = [];\nvar options = msg.payload.output.generic[0].options;\n// opções se adequam a quantidade de opções no array options\nfor (let i = 0; i<options.length;i++) {\n    keyboard.push([options[i].label])\n}\n\nvar opts = {\n    reply_markup: JSON.stringify({\n        keyboard: keyboard,\n        'resize_keyboard' : true,\n        'one_time_keyboard' : true          \n    })\n};\n\nif (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_conversa;\n    } else {\n        var tipo = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo\n}\n\nmsg.opts_wa = opts;\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].title;\nmsg.payload = msg.arquivo;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3050,
+        "y": 600,
+        "wires": [
+            [
+                "f6ddfb6b1b7ec47d",
+                "01bba3cc3ce4a2ad"
+            ]
+        ]
+    },
+    {
+        "id": "f6ddfb6b1b7ec47d",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3220,
+        "y": 680,
+        "wires": [
+            [
+                "9604a9fd822ebab8"
+            ]
+        ]
+    },
+    {
+        "id": "01bba3cc3ce4a2ad",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3220,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "24c28b6ff1777a6b",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3220,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "e182e4b19c0e7b67",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 3640,
+        "y": 460,
+        "wires": [
+            [
+                "5e1b8d679d75ddd4"
+            ]
+        ]
+    },
+    {
+        "id": "2207eba7864a04dd",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 3640,
+        "y": 680,
+        "wires": [
+            [
+                "5e1b8d679d75ddd4"
+            ]
+        ]
+    },
+    {
+        "id": "995af23ab568c67d",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno textoTTS",
+        "func": "msg.payload = msg.saida_wa;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3430,
+        "y": 460,
+        "wires": [
+            [
+                "e182e4b19c0e7b67",
+                "54acf04ccf6d370c"
+            ]
+        ]
+    },
+    {
+        "id": "9604a9fd822ebab8",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno opçõesTTS",
+        "func": "msg.payload = msg.saida_wa;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3420,
+        "y": 680,
+        "wires": [
+            [
+                "2207eba7864a04dd",
+                "cce0aefb04c9d6ad"
+            ]
+        ]
+    },
+    {
+        "id": "54acf04ccf6d370c",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 14",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3480,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "5e1b8d679d75ddd4",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno TTS",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type:'voice'\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3750,
+        "y": 560,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "fa60dda028bf7922",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "switch text ou option",
+        "property": "payload.output.generic[0].response_type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "text",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "option",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "image",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 2700,
+        "y": 1280,
+        "wires": [
+            [
+                "c9ace80fae5cf734"
+            ],
+            [
+                "13e8dc0b6be23095"
+            ],
+            [
+                "b5973f9b187e01de"
+            ]
+        ]
+    },
+    {
+        "id": "c9ace80fae5cf734",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno text",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].text;\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2890,
+        "y": 1360,
+        "wires": [
+            [
+                "b7c0687a9a0f9c19",
+                "3f99d6ea0b754668"
+            ]
+        ]
+    },
+    {
+        "id": "b7c0687a9a0f9c19",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3080,
+        "y": 1380,
+        "wires": [
+            [
+                "fd492ca3591afd70"
+            ]
+        ]
+    },
+    {
+        "id": "13e8dc0b6be23095",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno opts",
+        "func": "var keyboard = [];\nvar options = msg.payload.output.generic[0].options;\n// opções se adequam a quantidade de opções no array options\nfor (let i = 0; i<options.length;i++) {\n    keyboard.push([options[i].label])\n}\n\nvar opts = {\n    reply_markup: JSON.stringify({\n        keyboard: keyboard,\n        'resize_keyboard' : true,\n        'one_time_keyboard' : true          \n    })\n};\n\nif (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo\n}\n\nmsg.opts_wa = opts;\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].title;\nmsg.payload = msg.arquivo;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2890,
+        "y": 1460,
+        "wires": [
+            [
+                "1e6f6621610808e6",
+                "403c20d6d7048d89"
+            ]
+        ]
+    },
+    {
+        "id": "1e6f6621610808e6",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3080,
+        "y": 1560,
+        "wires": [
+            [
+                "ad95f7f6062c3a11"
+            ]
+        ]
+    },
+    {
+        "id": "403c20d6d7048d89",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 15",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3080,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "3f99d6ea0b754668",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 16",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3080,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "74c59ce34d9b6ee5",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 3500,
+        "y": 1380,
+        "wires": [
+            [
+                "debda246cc295e81"
+            ]
+        ]
+    },
+    {
+        "id": "81738510b7400e33",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 3500,
+        "y": 1560,
+        "wires": [
+            [
+                "205eeacfe53ffd5b"
+            ]
+        ]
+    },
+    {
+        "id": "fd492ca3591afd70",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno textoTTS",
+        "func": "msg.payload = msg.saida_wa;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3290,
+        "y": 1380,
+        "wires": [
+            [
+                "74c59ce34d9b6ee5"
+            ]
+        ]
+    },
+    {
+        "id": "ad95f7f6062c3a11",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno opçõesTTS",
+        "func": "msg.payload = msg.saida_wa;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3280,
+        "y": 1560,
+        "wires": [
+            [
+                "81738510b7400e33"
+            ]
+        ]
+    },
+    {
+        "id": "debda246cc295e81",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno TTS Telegram",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type:'voice'\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3720,
+        "y": 1380,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "205eeacfe53ffd5b",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno OptsTTS Telegram",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    options: msg.opts_wa,\n    type:'voice'\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3740,
+        "y": 1560,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "24eab671158835ea",
+        "type": "http request",
+        "z": "7f476a91f833ba37",
+        "name": "requisição para obter as labels",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1810,
+        "y": 760,
+        "wires": [
+            [
+                "76c761b3dcdba881",
+                "1b210961e774f91a"
+            ]
+        ]
+    },
+    {
+        "id": "b3fc82cac94fda30",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "faz requisição ao Google Cloud Vision API para obter as labels",
+        "func": "var image = {content: msg.payload.toString('base64')};\nvar features = {type: 'LABEL_DETECTION', maxResults: 10};\nvar imageContext = {languageHints: 'ja'};\nvar request = {image: image, features: features, imageContext: imageContext};\nvar requests = {requests: request};\nmsg.payload = requests;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1430,
+        "y": 580,
+        "wires": [
+            [
+                "73dfad2080a0f2ab"
+            ]
+        ]
+    },
+    {
+        "id": "73dfad2080a0f2ab",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "set URL e Headers",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "https://vision.googleapis.com/v1/images:annotate?key=AIzaSyCmmZfngkFbSoIQJQ4ZluzfRNH9kuMtXiY",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "Content-Type: application/json",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1630,
+        "y": 680,
+        "wires": [
+            [
+                "24eab671158835ea"
+            ]
+        ]
+    },
+    {
+        "id": "1b210961e774f91a",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno labels",
+        "func": "if (Object.keys(msg.payload.responses[0]).length < 1) {\n    return null;\n}\n\nvar labels = 'Results for the image sent: ';\nvar labelAnnotations = msg.payload.responses[0].labelAnnotations;\nfor (var i = 0; i < labelAnnotations.length; i++) {\n    labels += labelAnnotations[i].description;\n    labels +=', ';\n}\n\nmsg.payload = labels.slice(0, labels.length - 2);\n    \n\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1920,
+        "y": 900,
+        "wires": [
+            [
+                "d2d8f7c3adae2557",
+                "a96801a1063f71c0"
+            ]
+        ]
+    },
+    {
+        "id": "d2d8f7c3adae2557",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "retorno para o tradutor",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2040,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "76c761b3dcdba881",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "retorno requisição",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1910,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2839e57bdb07895d",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Entrada de imagem",
+        "rules": [
+            {
+                "t": "set",
+                "p": "params.session_id",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "chatId",
+                "pt": "msg",
+                "to": "payload.chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.weblink",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "filename",
+                "pt": "msg",
+                "to": "D:/Aulas/Chatbot/chatbot_gs/bd.json",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "a157378b783f6dd1",
+                "526b430649d64d76"
+            ]
+        ]
+    },
+    {
+        "id": "a157378b783f6dd1",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "59faf5c4e713a77c",
+        "type": "http request",
+        "z": "7f476a91f833ba37",
+        "name": "baixa imagem",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1160,
+        "y": 680,
+        "wires": [
+            [
+                "b3fc82cac94fda30"
+            ]
+        ]
+    },
+    {
+        "id": "526b430649d64d76",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "constroi url ",
+        "func": "var baseUrl = \"https://api.telegram.org/file/bot\";\nvar token = msg.token;\nvar filePath = msg.file_path;\nmsg.url = baseUrl + token + filePath;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 620,
+        "wires": [
+            [
+                "fb0c356c32f88ba2",
+                "755214590d91edd3"
+            ]
+        ]
+    },
+    {
+        "id": "fb0c356c32f88ba2",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 970,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "755214590d91edd3",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 660,
+        "wires": [
+            [
+                "59faf5c4e713a77c"
+            ]
+        ]
+    },
+    {
+        "id": "288645a69fba6b78",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno resultados ao telegram",
+        "func": "msg.retorno_vision = msg.payload\nmsg.payload = {\n    content: msg.payload,\n    type: 'message',\n    chatId: msg.params.session_id\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2230,
+        "y": 640,
+        "wires": [
+            [
+                "8d716d5cda3da0e8"
+            ]
+        ]
+    },
+    {
+        "id": "e779bda021ed67f5",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "retorno translator",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2370,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "a96801a1063f71c0",
+        "type": "google-translate",
+        "z": "7f476a91f833ba37",
+        "from": "auto",
+        "name": "",
+        "to": "pt",
+        "x": 2140,
+        "y": 800,
+        "wires": [
+            [
+                "288645a69fba6b78",
+                "e779bda021ed67f5"
+            ]
+        ]
+    },
+    {
+        "id": "50dda8b88d247be5",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno imagem",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].source;\nmsg.especie_nome = msg.payload.output.generic[0].title;\nmsg.especie_descricao = msg.payload.output.generic[0].description;\nmsg.descricao = `\n${msg.especie_nome}\n${msg.especie_descricao}\n`\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3000,
+        "y": 160,
+        "wires": [
+            [
+                "bf2dacb245ee1d5f",
+                "4f7e8e9e5d513806"
+            ]
+        ]
+    },
+    {
+        "id": "bf2dacb245ee1d5f",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno imagem telegram",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2990,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4f7e8e9e5d513806",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3280,
+        "y": 300,
+        "wires": [
+            [
+                "5205585ba19eb568"
+            ]
+        ]
+    },
+    {
+        "id": "5205585ba19eb568",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "photo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.caption",
+                "pt": "msg",
+                "to": "descricao",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3560,
+        "y": 340,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "1422672347401f63",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno imagem",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.saida_wa = msg.payload.output.generic[0].source;\nmsg.especie_nome = msg.payload.output.generic[0].title;\nmsg.especie_descricao = msg.payload.output.generic[0].description;\nmsg.descricao = `\n${msg.especie_nome}\n${msg.especie_descricao}\n`\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3000,
+        "y": 1260,
+        "wires": [
+            [
+                "98899ebbc2631ef2"
+            ]
+        ]
+    },
+    {
+        "id": "98899ebbc2631ef2",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3200,
+        "y": 1260,
+        "wires": [
+            [
+                "341ed940b2e80724"
+            ]
+        ]
+    },
+    {
+        "id": "341ed940b2e80724",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "photo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.caption",
+                "pt": "msg",
+                "to": "descricao",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3480,
+        "y": 1260,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "cce0aefb04c9d6ad",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 17",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3480,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b5973f9b187e01de",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno imagem",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.tipo_wa = tipo;\nmsg.saida_wa = msg.payload.output.generic[0].source;\nmsg.especie_nome = msg.payload.output.generic[0].title;\nmsg.especie_descricao = msg.payload.output.generic[0].description;\nmsg.descricao = `\n${msg.especie_nome}\n${msg.especie_descricao}\n`\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2880,
+        "y": 1640,
+        "wires": [
+            [
+                "63c4376d898aacf1"
+            ]
+        ]
+    },
+    {
+        "id": "63c4376d898aacf1",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3080,
+        "y": 1640,
+        "wires": [
+            [
+                "66cd6bdbccd82296"
+            ]
+        ]
+    },
+    {
+        "id": "66cd6bdbccd82296",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "photo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.tipo_wa_img",
+                "pt": "msg",
+                "to": "tipo_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3360,
+        "y": 1640,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7",
+                "56cd90bba6aa3d14"
+            ]
+        ]
+    },
+    {
+        "id": "6a20381bd55d559d",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "passagem da descrição da imagem",
+        "func": "msg.payload = msg.descricao\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 4760,
+        "y": 420,
+        "wires": [
+            [
+                "b2a331bd81868007"
+            ]
+        ]
+    },
+    {
+        "id": "b2a331bd81868007",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 5040,
+        "y": 420,
+        "wires": [
+            [
+                "520439d7b036224d"
+            ]
+        ]
+    },
+    {
+        "id": "520439d7b036224d",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno TTS",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type:'voice'\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 5250,
+        "y": 420,
+        "wires": [
+            [
+                "d3784a0ae0804e81"
+            ]
+        ]
+    },
+    {
+        "id": "d3784a0ae0804e81",
+        "type": "telegram sender",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "bot": "c0975c32a38e23ca",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 5470,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56cd90bba6aa3d14",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 19",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3600,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "a672b5601aaf3105",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "verifica se é img_voice",
+        "property": "payload.tipo_wa_img",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 4460,
+        "y": 420,
+        "wires": [
+            [
+                "6a20381bd55d559d"
+            ]
+        ]
+    },
+    {
+        "id": "cbe605b119180d0d",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "retorno imagem",
+        "func": "if (\"user_defined\" in msg.payload.context.skills[\"main skill\"]) {\n    var temp = msg.payload.context.skills[\"main skill\"].user_defined;\n    if (\"tipo_wa\" in temp) {\n        var tipo = temp.tipo_wa;\n    } else {\n        var tipo = null;\n    }\n    if (\"tipo_entrada\" in temp) {\n        var tipo_entrada = temp.tipo_entrada;\n    } else {\n        var tipo_entrada = null;\n    }\n}\n\nconst novoObjeto = {\n    \"tipo_wa\": tipo,\n    \"tipo_entrada\": tipo_entrada  \n}\n\nmsg.arquivo[0] = novoObjeto;\nmsg.tipo_wa = tipo;\nmsg.saida_wa = msg.payload.output.generic[0].source;\nmsg.especie_nome = msg.payload.output.generic[0].title;\nmsg.especie_descricao = msg.payload.output.generic[0].description;\nmsg.descricao = `\n${msg.especie_nome}\n${msg.especie_descricao}\n`\nmsg.payload = msg.arquivo;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3100,
+        "y": 760,
+        "wires": [
+            [
+                "50029f5d77a20ec1"
+            ]
+        ]
+    },
+    {
+        "id": "50029f5d77a20ec1",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3260,
+        "y": 760,
+        "wires": [
+            [
+                "f0c63f8cc2422399"
+            ]
+        ]
+    },
+    {
+        "id": "f0c63f8cc2422399",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "photo",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "saida_wa",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.tipo_wa_img",
+                "pt": "msg",
+                "to": "tipo_wa",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3480,
+        "y": 760,
+        "wires": [
+            [
+                "6d4f4331db8e60cf"
+            ]
+        ]
+    },
+    {
+        "id": "6d4f4331db8e60cf",
+        "type": "debug",
+        "z": "7f476a91f833ba37",
+        "name": "debug 20",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "saida_wa",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 3640,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "980b50c4bb5c8d6a",
+        "type": "file",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 3410,
+        "y": 20,
+        "wires": [
+            [
+                "f58fa56d5598cd28"
+            ]
+        ]
+    },
+    {
+        "id": "5d9e35300670b014",
+        "type": "json",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1570,
+        "y": 120,
+        "wires": [
+            [
+                "51280297f4fc7252",
+                "0185ab7203784d06"
+            ]
+        ]
+    },
+    {
+        "id": "e3aab484388a55ac",
+        "type": "file in",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 1360,
+        "y": 120,
+        "wires": [
+            [
+                "5d9e35300670b014"
+            ]
+        ]
+    },
+    {
+        "id": "ed86a3314d3efbb6",
+        "type": "file in",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "filename": "filename",
+        "filenameType": "msg",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 2560,
+        "y": 1780,
+        "wires": [
+            [
+                "b2db5e4aa492585c"
+            ]
+        ]
+    },
+    {
+        "id": "14f8ff3da583d0c1",
+        "type": "switch",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "property": "payload[0].tipo_wa",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "default",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "message",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "voice",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 2870,
+        "y": 1780,
+        "wires": [
+            [
+                "5bb2e10394805fbe"
+            ],
+            [
+                "5bb2e10394805fbe"
+            ],
+            [
+                "2247fd6f19d84458"
+            ]
+        ]
+    },
+    {
+        "id": "5bb2e10394805fbe",
+        "type": "change",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno ao Telegram",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload.chatId",
+                "pt": "msg",
+                "to": "chatId",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload.type",
+                "pt": "msg",
+                "to": "message",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload.content",
+                "pt": "msg",
+                "to": "retorno_vision",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 3780,
+        "y": 1760,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "b2db5e4aa492585c",
+        "type": "json",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 2730,
+        "y": 1780,
+        "wires": [
+            [
+                "14f8ff3da583d0c1"
+            ]
+        ]
+    },
+    {
+        "id": "2247fd6f19d84458",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno opçõesTTS",
+        "func": "msg.payload = msg.retorno_vision;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3100,
+        "y": 1840,
+        "wires": [
+            [
+                "625924e238ca81cb"
+            ]
+        ]
+    },
+    {
+        "id": "625924e238ca81cb",
+        "type": "watson-text-to-speech",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaVoice",
+        "voicehidden": "pt-BR_IsabelaVoice",
+        "format": "audio/wav",
+        "password": "",
+        "apikey": "lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY",
+        "payload-response": true,
+        "service-endpoint": "https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d",
+        "x": 3400,
+        "y": 1840,
+        "wires": [
+            [
+                "d9a562907ec34d7c"
+            ]
+        ]
+    },
+    {
+        "id": "d9a562907ec34d7c",
+        "type": "function",
+        "z": "7f476a91f833ba37",
+        "name": "Retorno TTS",
+        "func": "msg.payload = {\n    chatId: msg.params.session_id,\n    content: msg.payload,\n    type:'voice'\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 3830,
+        "y": 1840,
+        "wires": [
+            [
+                "3cf5fc3a5e582ff7"
+            ]
+        ]
+    },
+    {
+        "id": "5c8aa71e8bf334d9",
+        "type": "comment",
+        "z": "7f476a91f833ba37",
+        "name": "",
+        "info": "alterar diretorio de msg.filename",
+        "x": 640,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c0975c32a38e23ca",
+        "type": "telegram bot",
+        "botname": "EcoceanBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]

@@ -1,0 +1,2043 @@
+{
+  "intents": [
+    {
+      "intent": "alertar_poluicao",
+      "examples": [
+        {
+          "text": "A área onde me encontro está cheia de lixo. Como posso alertar?"
+        },
+        {
+          "text": "Acabo de encontrar muito lixo no oceano."
+        },
+        {
+          "text": "Como faço para alertar o serviço sobre a presença de lixo?"
+        },
+        {
+          "text": "Desejo alertar uma poluição no oceano."
+        },
+        {
+          "text": "Desejo alertar uma quantidade de lixo no oceano."
+        },
+        {
+          "text": "Quero alertar a presença de dejetos no mar."
+        },
+        {
+          "text": "Quero alertar sobre a presença elevada de poluição no mar."
+        },
+        {
+          "text": "Quero alertar sobre uma quantidade de lixo encontrada."
+        },
+        {
+          "text": "Quero alertar uma poluição encontrada no oceano."
+        },
+        {
+          "text": "Quero fazer uma denúncia sobre uma quantidade elevada de poluição."
+        },
+        {
+          "text": "Quero informar uma poluição encontrada."
+        },
+        {
+          "text": "Quero realizar um alerta sobre poluição no oceano."
+        },
+        {
+          "text": "Quero reportar uma poluição."
+        }
+      ],
+      "description": "alerta sobre poluição ou acúmulo de lixo."
+    },
+    {
+      "intent": "consultar_especie",
+      "examples": [
+        {
+          "text": "Desejo consultar as informações de uma espécie."
+        },
+        {
+          "text": "Me ajude a visualizar uma espécie do mar."
+        },
+        {
+          "text": "Olá! Quero visualizar as informações de uma espécie do mar."
+        },
+        {
+          "text": "Poderia me ajudar? Quero visualizar os dados de uma espécie."
+        },
+        {
+          "text": "Quero checar os dados de uma espécie."
+        },
+        {
+          "text": "Quero consultar uma espécie"
+        },
+        {
+          "text": "Quero consultar uma espécie marinha."
+        },
+        {
+          "text": "Quero olhar os dados de uma espécie."
+        },
+        {
+          "text": "Quero ver as informações sobre uma espécie."
+        },
+        {
+          "text": "Quero ver os dados de uma espécie."
+        },
+        {
+          "text": "Quero visualizar as informações de uma espécie."
+        },
+        {
+          "text": "Quero visualizar a situação de uma espécie."
+        },
+        {
+          "text": "Quero visualizar os dados de uma espécie."
+        }
+      ],
+      "description": "ajuda com a consulta sobre uma espécie."
+    },
+    {
+      "intent": "info_projeto",
+      "examples": [
+        {
+          "text": "Como vocês estão ajudando os oceanos com o projeto desenvolvido?"
+        },
+        {
+          "text": "Como vocês estão lidando com as ilhas de lixo? Como o projeto pode ajudar na remoção delas?"
+        },
+        {
+          "text": "Gostaria de entender os objetivos do projeto."
+        },
+        {
+          "text": "O projeto de vocês auxilia na remoção de lixo e poluição nos oceanos?"
+        },
+        {
+          "text": "O que vocês buscam com o projeto criado?"
+        },
+        {
+          "text": "Poderia me dar uma explicação sobre o projeto?"
+        },
+        {
+          "text": "Quais benefícios os usuários poder ter com o projeto?"
+        },
+        {
+          "text": "Quais os benefícios para os oceanos que o projeto desenvolvido busca trazer?"
+        },
+        {
+          "text": "Qual o propósito do projeto?"
+        },
+        {
+          "text": "Quem se beneficia com o projeto?"
+        },
+        {
+          "text": "Queria uma breve explicação sobre o projeto."
+        },
+        {
+          "text": "Queria uma breve informação sobre o projeto."
+        }
+      ],
+      "description": "Ajuda o usuário a entender mais sobre o nosso projeto e seu propósito."
+    },
+    {
+      "intent": "realizar_doacao",
+      "examples": [
+        {
+          "text": "Bom dia. Quero doar uma quantia."
+        },
+        {
+          "text": "Como faço para doar dinheiro para a Ecocean?"
+        },
+        {
+          "text": "Como faço para doar dinheiro para vocês?"
+        },
+        {
+          "text": "Desejo fazer uma doação."
+        },
+        {
+          "text": "Quero dar dinheiro a vocês. Como faço?"
+        },
+        {
+          "text": "Quero doar dinheiro para a Ecocean."
+        },
+        {
+          "text": "Quero doar dinheiro para vocês."
+        },
+        {
+          "text": "Quero doar uma quantia para a Ecocean."
+        },
+        {
+          "text": "Quero fazer uma doação."
+        },
+        {
+          "text": "Quero fazer uma doação a Ecocean."
+        },
+        {
+          "text": "Quero realizar uma doação."
+        },
+        {
+          "text": "Quero realizar uma doação para o projeto."
+        }
+      ],
+      "description": "Ajuda o usuário a realizar uma doação."
+    },
+    {
+      "intent": "reconhecimento_especie",
+      "examples": [
+        {
+          "text": "Desejo reconhecer uma espécie pela imagem que tirei."
+        },
+        {
+          "text": "Olá! Tirei uma foto de uma espécie e quero saber do que se trata."
+        },
+        {
+          "text": "O que é isso na foto que tirei?"
+        },
+        {
+          "text": "Qual a espécie da imagem."
+        },
+        {
+          "text": "Qual a espécie na imagem?"
+        },
+        {
+          "text": "Quero enviar uma imagem de uma espécie e receber um retorno."
+        },
+        {
+          "text": "Quero enviar uma imagem para reconhecimento."
+        },
+        {
+          "text": "Quero reconhecer uma espécie por uma imagem."
+        },
+        {
+          "text": "quero reconhecimento de espécie."
+        },
+        {
+          "text": "Quero saber o que é a espécie que tirei uma foto."
+        },
+        {
+          "text": "Quero saber o que é isso que tirei foto."
+        },
+        {
+          "text": "Quero saber qual a espécie da imagem que tirei."
+        },
+        {
+          "text": "Quero saber qual o animal da imagem."
+        }
+      ],
+      "description": "Ajuda o usuário com o reconhecimento da espécie."
+    },
+    {
+      "intent": "reportar_pesca",
+      "examples": [
+        {
+          "text": "Como posso fazer uma denúncia de uma pesca ilegal?"
+        },
+        {
+          "text": "Como posso reportar uma pesca ilegal?"
+        },
+        {
+          "text": "Desejo fazer uma denúncia sobre uma pesca sendo feita de forma ilegal."
+        },
+        {
+          "text": "Desejo reportar uma pesca ilegal."
+        },
+        {
+          "text": "Estou vendo uma pessoa fazendo uma pesca ilegal. Como posso denunciar?"
+        },
+        {
+          "text": "Me ajude a reportar uma pesca ilegal."
+        },
+        {
+          "text": "Quero fazer uma denúncia de uma pesca ilegal."
+        },
+        {
+          "text": "Quero realizar uma denúncia sobre uma pesca."
+        },
+        {
+          "text": "Quero reportar uma pesca ilegal."
+        },
+        {
+          "text": "Quero reportar uma pesca ilegal sendo feita."
+        },
+        {
+          "text": "Quero reportar uma pesca que está sendo feita de forma ilegal."
+        },
+        {
+          "text": "Uma pesca está sendo feita de forma irregular. Como posso denunciar?"
+        }
+      ],
+      "description": "Ajuda a reportar pescas ilegais"
+    },
+    {
+      "intent": "trocar_conversa",
+      "examples": [
+        {
+          "text": "Bom dia, quero mudar o tipo da conversa."
+        },
+        {
+          "text": "Desejo alterar o tipo da conversa."
+        },
+        {
+          "text": "Desejo trocar o tipo da conversa."
+        },
+        {
+          "text": "Me ajude a alterar o tipo da conversa."
+        },
+        {
+          "text": "Quero alterar o tipo da conversa."
+        },
+        {
+          "text": "Quero conversar de outra forma,"
+        },
+        {
+          "text": "Quero conversar por áudio."
+        },
+        {
+          "text": "Quero conversar por texto."
+        },
+        {
+          "text": "Quero falar por texto."
+        },
+        {
+          "text": "Quero me comunicar por áudio."
+        },
+        {
+          "text": "Quero me comunicar por texto"
+        },
+        {
+          "text": "Quero trocar o tipo da conversa."
+        }
+      ],
+      "description": "Troca a conversa do usuário no Telegram (áudio, texto ou padrão)"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "continentes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "África",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "América",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Antártida",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ásia",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Europa",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Oceania",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "coordenadas",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "coordenada",
+          "patterns": [
+            "^(?:\\+|-)([0-9]{1,3}\\.[0-9]{1,7})(?:\\+|-)([0-9]{1,3}\\.[0-9]{1,7})$",
+            "([+-]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?)),\\s*([+-]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?))"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "data",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "data",
+          "patterns": [
+            "^([0-2][1-9]|3[01])/([0][1-9]|1[0-2])$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "especies",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "baleia-azul",
+          "synonyms": [
+            "baleia azul"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "camarão-mantis",
+          "synonyms": [
+            "camarão mantis"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "coral-vermelho",
+          "synonyms": [
+            "coral vermelho"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "mero-preto",
+          "synonyms": [
+            "mero preto"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "peixe-boi-marinho",
+          "synonyms": [
+            "peixe boi marinho"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "peixe-palhaço",
+          "synonyms": [
+            "peixe palhaço"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "peixe-serra-comum",
+          "synonyms": [
+            "peixe serra comum"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tartaruga-marinha-verde",
+          "synonyms": [
+            "tartaruga marinha verde"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tubarão-branco",
+          "synonyms": [
+            "tubarão branco"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "vaquita",
+          "synonyms": [
+            "vaquita"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "horario",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "horas",
+          "patterns": [
+            "^([01]\\d|2[0-3]):([0-5]\\d)$"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "inicializacao_telegram",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "/start",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "oceanos",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "antártico",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "ártico",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "atlântico",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "índico",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "pacífico",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "ponto_referencia",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Casa",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Costa",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ilha",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Porto",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Praia",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "quantidade_lixo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Alarmante",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Alta",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Baixa",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Média",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sim-nao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "não",
+          "synonyms": [
+            "incorreto",
+            "n",
+            "não desejo",
+            "não quero",
+            "negativo",
+            "nn"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "sim",
+          "synonyms": [
+            "afirmativo",
+            "certo",
+            "claro",
+            "com certeza",
+            "desejo",
+            "ok",
+            "quero",
+            "s",
+            "ss"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": []
+    },
+    {
+      "entity": "tipo_conversa",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "áudio",
+          "synonyms": [
+            "voz"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "padrão",
+          "synonyms": [
+            "ambos"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "texto",
+          "synonyms": [
+            "digitar"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "tipo_pesca",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Captura Excedendo Limites de Quantidade",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Descarte Ilegal de Peixes",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pesca de Espécies Protegidas",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pesca em Áreas Protegidas",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pesca Fora de Temporada",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pesca não declarada e não regulamentada",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pesca sem Licença",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Uso de Equipamentos Proibidos",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "tipo_poluentelixo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "descarte de esgoto",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "detritos de embarcações",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "óleo",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "plástico",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "produtos químicos",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá! Sou o bot da Ecocean, como posso te ajudar hoje?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "data": null,
+        "oceano": null,
+        "horario": null,
+        "tipo_wa": "default",
+        "continente": null,
+        "tipo_pesca": null,
+        "coordenadas": null,
+        "valor_doado": null,
+        "quantidade_lixo": null,
+        "ponto_referencia": null,
+        "tipo_poluentelixo": null
+      },
+      "conditions": "welcome || @inicializacao_telegram:(/start)",
+      "dialog_node": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_8_1716902851167",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Qual o tipo de poluente / lixo encontrado?",
+            "options": [
+              {
+                "label": "Plástico",
+                "value": {
+                  "input": {
+                    "text": "Plástico"
+                  }
+                }
+              },
+              {
+                "label": "Descarte de Esgoto",
+                "value": {
+                  "input": {
+                    "text": "Descarte de Esgoto"
+                  }
+                }
+              },
+              {
+                "label": "Óleo",
+                "value": {
+                  "input": {
+                    "text": "Óleo"
+                  }
+                }
+              },
+              {
+                "label": "Detritos de Embarcações",
+                "value": {
+                  "input": {
+                    "text": "Detritos de Embarcações"
+                  }
+                }
+              },
+              {
+                "label": "Produtos Químicos",
+                "value": {
+                  "input": {
+                    "text": "Produtos Químicos"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_9_1716830177170",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1716830177177",
+      "previous_sibling": "handler_8_1716830177177"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Qual o continente mais próximo?",
+            "options": [
+              {
+                "label": "América",
+                "value": {
+                  "input": {
+                    "text": "América"
+                  }
+                }
+              },
+              {
+                "label": "Europa",
+                "value": {
+                  "input": {
+                    "text": "Europa"
+                  }
+                }
+              },
+              {
+                "label": "Ásia",
+                "value": {
+                  "input": {
+                    "text": "Ásia"
+                  }
+                }
+              },
+              {
+                "label": "África",
+                "value": {
+                  "input": {
+                    "text": "África"
+                  }
+                }
+              },
+              {
+                "label": "Oceania",
+                "value": {
+                  "input": {
+                    "text": "Oceania"
+                  }
+                }
+              },
+              {
+                "label": "Antártida",
+                "value": {
+                  "input": {
+                    "text": "Antártida"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_6_1716830369770",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1716830369770",
+      "previous_sibling": "handler_9_1716830369770"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1716903535602",
+      "context": {
+        "tipo_pesca": "@tipo_pesca.literal"
+      },
+      "conditions": "@tipo_pesca.literal",
+      "event_name": "input",
+      "dialog_node": "handler_2_1716903535616"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1717287751211",
+      "context": {
+        "valor_doado": "@sys-currency"
+      },
+      "conditions": "@sys-currency",
+      "event_name": "input",
+      "dialog_node": "handler_2_1717287751218"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual o horário que a pesca ilegal foi identificada? (ex: 12:30)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_3_1717283204917",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1717283204918",
+      "previous_sibling": "handler_5_1717283204918"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1717283472370",
+      "context": {
+        "data": "@data.literal"
+      },
+      "conditions": "@data.literal",
+      "event_name": "input",
+      "dialog_node": "handler_3_1717283472371"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Quais as coordenadas? (exemplo: +40.7128, -74.0060) "
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_3_1716830522211",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1716830522212",
+      "previous_sibling": "handler_6_1716830522212"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Qual o tipo de pesca ilegal identificada?",
+            "options": [
+              {
+                "label": "Pesca em Áreas Protegidas",
+                "value": {
+                  "input": {
+                    "text": "Pesca em Áreas Protegidas"
+                  }
+                }
+              },
+              {
+                "label": "Pesca de Espécies Protegidas",
+                "value": {
+                  "input": {
+                    "text": "Pesca de Espécies Protegidas"
+                  }
+                }
+              },
+              {
+                "label": "Uso de Equipamentos Proibidos",
+                "value": {
+                  "input": {
+                    "text": "Uso de Equipamentos Proibidos"
+                  }
+                }
+              },
+              {
+                "label": "Pesca Fora de Temporada",
+                "value": {
+                  "input": {
+                    "text": "Pesca Fora de Temporada"
+                  }
+                }
+              },
+              {
+                "label": "Pesca Sem Licença",
+                "value": {
+                  "input": {
+                    "text": "Pesca Sem Licença"
+                  }
+                }
+              },
+              {
+                "label": "Captura Excedendo Limites de Quantidade",
+                "value": {
+                  "input": {
+                    "text": "Captura Excedendo Limites de Quantidade"
+                  }
+                }
+              },
+              {
+                "label": "Descarte Ilegal de Peixes",
+                "value": {
+                  "input": {
+                    "text": "Descarte Ilegal de Peixes"
+                  }
+                }
+              },
+              {
+                "label": "Pesca não declarada e não regulamentada",
+                "value": {
+                  "input": {
+                    "text": "Pesca não declarada e não regulamentada"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_1_1716903535602",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1716903535616",
+      "previous_sibling": "handler_2_1716903535616"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual o ponto de referência?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_8_1717283940746",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1717283940746",
+      "previous_sibling": "handler_9_1717283940746"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual o valor que você deseja doar?"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_6_1717287751211",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1717287751218",
+      "previous_sibling": "handler_2_1717287751218"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1717283204917",
+      "context": {
+        "horario": "@horario.literal"
+      },
+      "conditions": "@horario.literal",
+      "event_name": "input",
+      "dialog_node": "handler_5_1717283204918"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1716830522211",
+      "context": {
+        "coordenadas": "@coordenadas.literal"
+      },
+      "conditions": "@coordenadas.literal",
+      "event_name": "input",
+      "dialog_node": "handler_6_1716830522212"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1716830273577",
+      "context": {
+        "oceano": "@oceanos.literal"
+      },
+      "conditions": "@oceanos.literal",
+      "event_name": "input",
+      "dialog_node": "handler_7_1716830273577"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1716857883157",
+      "context": {
+        "quantidade_lixo": "@quantidade_lixo.literal"
+      },
+      "conditions": "@quantidade_lixo.literal",
+      "event_name": "input",
+      "dialog_node": "handler_7_1716857883158"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual a data que a pesca ilegal foi identificada? (ex: 24/04)"
+              }
+            ],
+            "response_type": "text"
+          }
+        ]
+      },
+      "parent": "slot_2_1717283472370",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1717283472371",
+      "previous_sibling": "handler_3_1717283472371"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1716830177170",
+      "context": {
+        "tipo_poluentelixo": "@tipo_poluentelixo.literal"
+      },
+      "conditions": "@tipo_poluentelixo.literal",
+      "event_name": "input",
+      "dialog_node": "handler_8_1716830177177"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Em qual oceano?",
+            "options": [
+              {
+                "label": "Pacífico",
+                "value": {
+                  "input": {
+                    "text": "Pacífico"
+                  }
+                }
+              },
+              {
+                "label": "Atlântico",
+                "value": {
+                  "input": {
+                    "text": "Atlântico"
+                  }
+                }
+              },
+              {
+                "label": "Índico",
+                "value": {
+                  "input": {
+                    "text": "Índico"
+                  }
+                }
+              },
+              {
+                "label": "Ártico",
+                "value": {
+                  "input": {
+                    "text": "Ártico"
+                  }
+                }
+              },
+              {
+                "label": "Antártico",
+                "value": {
+                  "input": {
+                    "text": "Antártico"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_6_1716830273577",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1716830273577",
+      "previous_sibling": "handler_7_1716830273577"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Qual a quantidade de lixo / poluição encontrada?",
+            "options": [
+              {
+                "label": "Baixa",
+                "value": {
+                  "input": {
+                    "text": "baixa"
+                  }
+                }
+              },
+              {
+                "label": "Média",
+                "value": {
+                  "input": {
+                    "text": "média"
+                  }
+                }
+              },
+              {
+                "label": "Alta",
+                "value": {
+                  "input": {
+                    "text": "alta"
+                  }
+                }
+              },
+              {
+                "label": "Alarmante",
+                "value": {
+                  "input": {
+                    "text": "alarmante"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_9_1716857883157",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1716857883158",
+      "previous_sibling": "handler_7_1716857883158"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1716830369770",
+      "context": {
+        "continente": "@continentes.literal"
+      },
+      "conditions": "@continentes.literal",
+      "event_name": "input",
+      "dialog_node": "handler_9_1716830369770"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1717283940746",
+      "context": {
+        "ponto_referencia": "@ponto_referencia.literal"
+      },
+      "conditions": "@ponto_referencia.literal",
+      "event_name": "input",
+      "dialog_node": "handler_9_1717283940746"
+    },
+    {
+      "type": "standard",
+      "title": "Reconhecimento de espécie",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Envie uma imagem no formato .jpg ou .jpeg (Essa funcionalidade está presente apenas no Telegram. OBS.: dependendo da qualidade da imagem, os resultados podem ser imprecisos)"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#reconhecimento_especie",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_10_1716988096236",
+      "previous_sibling": "node_8_1716829095964"
+    },
+    {
+      "type": "standard",
+      "title": "consultar coral-vermelho",
+      "output": {
+        "generic": [
+          {
+            "title": "Coral-vermelho (Corallium rubrum)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Corail_rouge%2C_Corallium_rubrum_%28Linnaeus%2C_1758%29.jpg/1280px-Corail_rouge%2C_Corallium_rubrum_%28Linnaeus%2C_1758%29.jpg",
+            "alt_text": "imagem de coral-vermelho",
+            "description": "Este coral precioso é usado para fazer joias e outros objetos decorativos. O coral vermelho está ameaçado por colheita excessiva, mudanças climáticas e poluição.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:coral-vermelho",
+      "dialog_node": "node_10_1717289374708",
+      "previous_sibling": "node_6_1717289012256"
+    },
+    {
+      "type": "standard",
+      "title": "alterar para áudio",
+      "output": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1715905808991"
+      },
+      "conditions": "#trocar_conversa && @tipo_conversa:áudio",
+      "dialog_node": "node_1_1715906065723",
+      "previous_sibling": "node_9_1715905885853"
+    },
+    {
+      "type": "standard",
+      "title": "consultar peixe-palhaço",
+      "output": {
+        "generic": [
+          {
+            "title": "Peixe-Palhaço (Amphiprion ocellaris)",
+            "source": "https://tsunamiaquarios.com.br/wp-content/uploads/2023/07/ocelaris1-e36334f608a5460cd716588010205094-1024-1024.jpg",
+            "alt_text": "imagem de peixe palhaço",
+            "description": "Peixe pequeno e colorido. Corpo laranja com listras pretas e brancas. Vive em anêmonas-do-mar, que fornecem proteção contra predadores. Simbionte da anêmona, alimentando-se de restos de comida e protegendo-a de outros peixes. Não ameaçado de extinção.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:peixe-palhaço",
+      "dialog_node": "node_1_1716832778823",
+      "previous_sibling": "node_3_1716832682755"
+    },
+    {
+      "type": "frame",
+      "title": "Alertar poluição / lixo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "======= { RESUMO ALERTA POLUIÇÃO} =======\nTipo de poluente / lixo: $tipo_poluentelixo\nOceano: $oceano\nContinente mais próximo: $continente\nCoordenadas: $coordenadas\nQuantidade de lixo / poluição: $quantidade_lixo\n\nDeseja enviar o alerta?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#alertar_poluicao",
+      "dialog_node": "node_2_1716827201292",
+      "previous_sibling": "node_4_1715905759252"
+    },
+    {
+      "type": "standard",
+      "title": "consultar tubarão branco",
+      "output": {
+        "generic": [
+          {
+            "title": "Tubarão-Branco (Carcharodon carcharias)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Carcharodon_carcharias.jpg/1280px-Carcharodon_carcharias.jpg",
+            "alt_text": "imagem de tubarão branco",
+            "description": "Maior predador marinho, com até 6 metros de comprimento. Corpo robusto e fusiforme, com coloração branca no ventre e cinza no dorso. Dentes grandes e serrilhados. Caçador solitário e ápice da cadeia alimentar. Ameaçado de extinção.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:tubarão-branco",
+      "dialog_node": "node_2_1716832475444"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Alerta enviado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1716902709262",
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_2_1717284505158"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. Alerta não foi enviado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1716902709262",
+      "context": {
+        "data": null,
+        "horas": null,
+        "tipo_pesca": null,
+        "ponto_referencia": null
+      },
+      "conditions": "@sim-nao:não",
+      "dialog_node": "node_2_1717285121581",
+      "previous_sibling": "node_2_1717284505158"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ok. Transação cancelada."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1717287723446",
+      "context": {
+        "valor_doado": null
+      },
+      "conditions": "@sim-nao:não",
+      "dialog_node": "node_2_1717287910778",
+      "previous_sibling": "node_4_1717287887453"
+    },
+    {
+      "type": "standard",
+      "title": "consultar peixe-serra-comum",
+      "output": {
+        "generic": [
+          {
+            "title": "Peixe-serra-comum (Pristis pristis)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Pristis_pristis_townsville.jpg/1280px-Pristis_pristis_townsville.jpg",
+            "alt_text": "imagem peixe-serra-comum",
+            "description": "O peixe-serra-longo é um grande peixe de água salgada com um focinho serrilhado distinto. É encontrado em águas tropicais e subtropicais, mas suas populações têm diminuído drasticamente devido à pesca e à perda de habitat.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:peixe-serra-comum",
+      "dialog_node": "node_2_1717358243902",
+      "previous_sibling": "node_10_1717289374708"
+    },
+    {
+      "type": "standard",
+      "title": "consultar baleia-azul",
+      "output": {
+        "generic": [
+          {
+            "title": "Baleia-Azul (Balaenoptera musculus)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg/1280px-Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg",
+            "alt_text": "imagem de baleia azul",
+            "description": "Maior animal da Terra, com até 30 metros de comprimento. Corpo alongado e azulado, com manchas brancas no ventre. Baleia filtradora, alimentando-se de krill e outros pequenos crustáceos. Em Perigo pela caça baleeira comercial.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:baleia-azul",
+      "dialog_node": "node_3_1716832682755",
+      "previous_sibling": "node_2_1716832475444"
+    },
+    {
+      "type": "standard",
+      "title": "consulta camarão-mantis",
+      "output": {
+        "generic": [
+          {
+            "title": "Camarão-Mantis (Odontodactylus scyllarus)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Odontodactylus_scyllarus1.jpg/1280px-Odontodactylus_scyllarus1.jpg",
+            "alt_text": "imagem de camarão-mantis",
+            "description": "Pequeno crustáceo com cerca de 30 cm de comprimento. Garras grandes e poderosas, com cores vibrantes. Caçador rápido e preciso, utilizando suas garras para capturar presas com força impressionante. Não Ameaçado.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:camarão-mantis",
+      "dialog_node": "node_3_1716835149940",
+      "previous_sibling": "node_1_1716832778823"
+    },
+    {
+      "type": "frame",
+      "title": "Reportar pesca ilegal",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "======= { RESUMO ALERTA PESCA ILEGAL } =======\nTipo de pesca ilegal: $tipo_pesca\nHorário: $horario\nData: $data\nPonto de referência: $ponto_referencia\n\nDeseja enviar o alerta?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#reportar_pesca",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1716902709262",
+      "previous_sibling": "node_10_1716988096236"
+    },
+    {
+      "type": "standard",
+      "title": "alterar tipo conversa",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Deseja conversar por texto, áudio ou ambos (padrão)?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#trocar_conversa",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1715905759252",
+      "previous_sibling": "node_1_1715906065723"
+    },
+    {
+      "type": "standard",
+      "title": "Tipo da conversa texto apenas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Tipo da conversa alterado para texto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1715905759252",
+      "context": {
+        "tipo_wa": "message"
+      },
+      "conditions": "@tipo_conversa:texto",
+      "dialog_node": "node_4_1715905784689",
+      "previous_sibling": "node_6_1716852157746"
+    },
+    {
+      "type": "standard",
+      "title": "alterar para padrão",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_6_1716852157746"
+      },
+      "conditions": "@tipo_conversa:áudio && @tipo_conversa:texto || @tipo_conversa:padrão",
+      "dialog_node": "node_4_1716852026469",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "frame",
+      "title": "Doação",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O valor a ser doado é de $valor_doado reais, correto?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#realizar_doacao",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_4_1717287723446",
+      "previous_sibling": "node_3_1716902709262"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! A quantia foi recebida."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1717287723446",
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_4_1717287887453"
+    },
+    {
+      "type": "standard",
+      "title": "consultar peixe-boi-marinho",
+      "output": {
+        "generic": [
+          {
+            "title": "Peixe-Boi-Marinho (Trichechus manatus)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Manatee_with_calf.PD.jpg/1280px-Manatee_with_calf.PD.jpg",
+            "alt_text": "imagem de um peixe-boi-marinho",
+            "description": "Mamífero marinho herbívoro, com corpo grande e arredondado, coberto por pelos curtos e grossos. Patas modificadas em nadadeiras, cauda chata e arredondada. Em perigo de extinção pela perda de habitat, caça e pesca acidental.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:peixe-boi-marinho",
+      "dialog_node": "node_5_1716835191260",
+      "previous_sibling": "node_3_1716835149940"
+    },
+    {
+      "type": "standard",
+      "title": "Tipo da conversa áudio apenas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Tipo da conversa alterado para áudio"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1715905759252",
+      "context": {
+        "tipo_wa": "voice"
+      },
+      "conditions": "@tipo_conversa:áudio",
+      "dialog_node": "node_6_1715905808991",
+      "previous_sibling": "node_4_1715905784689"
+    },
+    {
+      "type": "standard",
+      "title": "Tipo da conversa texto e audio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Tipo da conversa alterado para padrão (áudio e texto)."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1715905759252",
+      "context": {
+        "tipo_wa": "default"
+      },
+      "conditions": "@tipo_conversa:áudio && @tipo_conversa:texto || @tipo_conversa:padrão",
+      "dialog_node": "node_6_1716852157746"
+    },
+    {
+      "type": "standard",
+      "title": "consultar vaquita",
+      "output": {
+        "generic": [
+          {
+            "title": "Vaquita (Phocoena sinus)",
+            "source": "https://socientifica.com.br/wp-content/uploads/2023/11/phocoena_sinus.jpg",
+            "alt_text": "imagem de vaquita",
+            "description": "Este pequeno golfinho é encontrado apenas no Golfo da Califórnia, no México. Restam apenas cerca de 10 indivíduos restantes, tornando-o o mamífero marinho mais ameaçado do mundo. Em perigo crítico de extinção.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:vaquita",
+      "dialog_node": "node_6_1717289012256",
+      "previous_sibling": "node_9_1717288750431"
+    },
+    {
+      "type": "standard",
+      "title": "Consultar espécie",
+      "output": {
+        "generic": [
+          {
+            "title": "Qual espécie você gostaria de consultar?",
+            "options": [
+              {
+                "label": "Tubarão-Branco",
+                "value": {
+                  "input": {
+                    "text": "tubarão-branco"
+                  }
+                }
+              },
+              {
+                "label": "Baleia-Azul",
+                "value": {
+                  "input": {
+                    "text": "baleia-azul"
+                  }
+                }
+              },
+              {
+                "label": "Peixe-Palhaço",
+                "value": {
+                  "input": {
+                    "text": "peixe-palhaço"
+                  }
+                }
+              },
+              {
+                "label": "Camarão-mantis",
+                "value": {
+                  "input": {
+                    "text": "camarão-mantis"
+                  }
+                }
+              },
+              {
+                "label": "Peixe-Boi-Marinho",
+                "value": {
+                  "input": {
+                    "text": "peixe-boi-marinho"
+                  }
+                }
+              },
+              {
+                "label": "Tartaruga-marinha-verde",
+                "value": {
+                  "input": {
+                    "text": "tartaruga-marinha-verde"
+                  }
+                }
+              },
+              {
+                "label": "Vaquita",
+                "value": {
+                  "input": {
+                    "text": "vaquita"
+                  }
+                }
+              },
+              {
+                "label": "Coral-vermelho",
+                "value": {
+                  "input": {
+                    "text": "coral-vermelho"
+                  }
+                }
+              },
+              {
+                "label": "Peixe-serra-comum",
+                "value": {
+                  "input": {
+                    "text": "peixe-serra-comum"
+                  }
+                }
+              },
+              {
+                "label": "Mero-preto",
+                "value": {
+                  "input": {
+                    "text": "mero-preto"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#consultar_especie",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1716829095964",
+      "previous_sibling": "node_2_1716827201292"
+    },
+    {
+      "type": "standard",
+      "title": "informações sobre o projeto",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O projeto Ecocean busca auxiliar na conservação da vida marinha e reduzir a poluição nos oceanos através da tecnologia. Ao permitir o usuário visualizar informações sobre espécies marinhas, denunciar pescas ilegais e poluições, reconhecer espécies através de imagens e oferecendo recompensas a organizações e usuários que auxiliem na proteção do ecossistema dos oceanos, a Ecocean acredita em uma vida marinha mais sustentável."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#info_projeto",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1716902851167",
+      "previous_sibling": "node_4_1717287723446"
+    },
+    {
+      "type": "standard",
+      "title": "alterar para texto",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_4_1715905784689"
+      },
+      "conditions": "#trocar_conversa && @tipo_conversa:texto",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1715905885853",
+      "previous_sibling": "node_4_1716852026469"
+    },
+    {
+      "type": "standard",
+      "title": "deseja enviar o alerta",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! Alerta enviado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1716827201292",
+      "conditions": "@sim-nao:sim",
+      "dialog_node": "node_9_1716831153241"
+    },
+    {
+      "type": "standard",
+      "title": "não deseja enviar o alerta",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Certo! O alerta não foi enviado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1716827201292",
+      "context": {
+        "oceano": null,
+        "continente": null,
+        "coordenadas": null,
+        "quantidade_lixo": null,
+        "tipo_poluentelixo": null
+      },
+      "conditions": "@sim-nao:não",
+      "dialog_node": "node_9_1716831290832",
+      "previous_sibling": "node_9_1716831153241"
+    },
+    {
+      "type": "standard",
+      "title": "consultar tartaruga-marinha-verde",
+      "output": {
+        "generic": [
+          {
+            "title": "Tartaruga-marinha-verde (Chelonia mydas)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Green_Sea_Turtle%2C_Cura%C3%A7ao.jpg/1280px-Green_Sea_Turtle%2C_Cura%C3%A7ao.jpg",
+            "alt_text": "imagem de tartaruga-marinha-verde",
+            "description": "Uma das maiores tartarugas marinhas, podendo chegar a 1,5 metros de comprimento. É herbívora, se alimentando principalmente de algas marinhas. Em perigo de extinção.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:tartaruga-marinha-verde",
+      "dialog_node": "node_9_1717288750431",
+      "previous_sibling": "node_5_1716835191260"
+    },
+    {
+      "type": "standard",
+      "title": "consultar mero-preto",
+      "output": {
+        "generic": [
+          {
+            "title": "Mero-preto (Epinephelus itajara)",
+            "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Itajara.JPG/1280px-Itajara.JPG",
+            "alt_text": "imagem mero-preto",
+            "description": "O mero é um dos maiores peixes recifais do Brasil, conhecido por sua importância ecológica. Suas populações estão diminuindo devido à pesca excessiva e destruição de habitats.",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_8_1716829095964",
+      "conditions": "@especies:mero-preto",
+      "dialog_node": "node_9_1717359254284",
+      "previous_sibling": "node_2_1717358243902"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1716902709262",
+      "variable": "$tipo_pesca",
+      "dialog_node": "slot_1_1716903535602",
+      "previous_sibling": "node_2_1717285121581"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1716902709262",
+      "variable": "$data",
+      "dialog_node": "slot_2_1717283472370",
+      "previous_sibling": "slot_3_1717283204917"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1716827201292",
+      "variable": "$coordenadas",
+      "dialog_node": "slot_3_1716830522211",
+      "previous_sibling": "slot_6_1716830369770"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1716902709262",
+      "variable": "$horario",
+      "dialog_node": "slot_3_1717283204917",
+      "previous_sibling": "slot_1_1716903535602"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1716827201292",
+      "variable": "$oceano",
+      "dialog_node": "slot_6_1716830273577",
+      "previous_sibling": "slot_9_1716830177170"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1716827201292",
+      "variable": "$continente",
+      "dialog_node": "slot_6_1716830369770",
+      "previous_sibling": "slot_6_1716830273577"
+    },
+    {
+      "type": "slot",
+      "parent": "node_4_1717287723446",
+      "variable": "$valor_doado",
+      "dialog_node": "slot_6_1717287751211",
+      "previous_sibling": "node_2_1717287910778"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_3_1716902709262",
+      "variable": "$ponto_referencia",
+      "dialog_node": "slot_8_1717283940746",
+      "previous_sibling": "slot_2_1717283472370"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1716827201292",
+      "variable": "$tipo_poluentelixo",
+      "dialog_node": "slot_9_1716830177170",
+      "previous_sibling": "node_9_1716831290832"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_2_1716827201292",
+      "variable": "$quantidade_lixo",
+      "dialog_node": "slot_9_1716857883157",
+      "previous_sibling": "slot_3_1716830522211"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Você quis dizer:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Nenhuma das anteriores",
+      "use_connect_to_support_prompt": "Connect to support",
+      "single_answer_clarification_prompt": "Something else"
+    },
+    "human_agent_assist": {
+      "prompt": "Você quis dizer:"
+    }
+  },
+  "learning_opt_out": false,
+  "language": "pt-br",
+  "description": "",
+  "name": "Chatbot-dialog"
+}

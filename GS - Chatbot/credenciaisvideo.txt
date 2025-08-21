@@ -1,0 +1,31 @@
+Membros:
+
+Giovanna Revito Roz - RM558981
+Kaian Gustavo de Oliveira Nascimento - RM558986
+Lucas Kenji Kikuchi - RM554424
+
+ATENÇÃO!! Necessário alterar o diretório do arquivo 'bd.json' em msg.filename nos nós 'Entrada de imagem', 'Entrada mensagem de texto' e 'Retorno Em texto'
+OBS.: caso o nó "Google translate" não seja importado, baixar o nó "node-red-contrib-google-translate-extend"
+
+Credenciais:
+
+Telegram Bot: EcoceanBot
+Telegram Key: 7273330924:AAEHRwMw-_zsi8q2QJRIz6h4Xd4cAHSW4aw
+
+API Key Watson: xEyFXeqWX_LYUVzceqHvV13BxxqkCjp4NO_5Q1ozDiZZ
+Service Endpoint: https://api.us-south.assistant.watson.cloud.ibm.com/instances/88079f10-a026-4d98-b8c2-53592ed8a019
+Assistant ID: 04076029-c23b-40e8-8411-db98e84cdecc
+
+API Key STT: 8gWPv0WalcZmAk3l0UdRYpotD22zN_nT3oY759_w-lSb
+Service Endpoint: https://api.us-south.speech-to-text.watson.cloud.ibm.com/instances/e53c41be-9b8e-478d-8d2d-658eaf1381ec
+
+API Key TTS: lD9Q0R_G1bOADdyg9IG56AfK5Whe0e8IXgqlWAqxtsVY
+Service Endpoint: https://api.us-south.text-to-speech.watson.cloud.ibm.com/instances/682baafc-45ed-4ef4-9bbe-d2e3918cad8d
+
+API Key Translator: Mjmts56z6zitM5gSsBQrJJO5gZrIutinzYtFQRGRq6pu
+Service Endpoint: https://api.us-south.language-translator.watson.cloud.ibm.com/instances/de92712c-2b0c-4d6f-9de1-67527bdf6e9b
+
+Google Cloud Vision API Key: AIzaSyCmmZfngkFbSoIQJQ4ZluzfRNH9kuMtXiY
+
+Link do vídeo: https://youtu.be/7TO3hfZ-szg?si=nBDT4b5rAh7f6oNf 
+
